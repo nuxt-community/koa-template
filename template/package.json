@@ -5,17 +5,25 @@
   "author": "{{ author }}",
   "private": true,
   "scripts": {
-    "dev": "nodemon -w app.js -w nuxt.config.js app.js",
-    "build": "nuxt build",
-    "start": "NODE_ENV=production node app.js",
+    "dev": "nodemon -w app.js -w nuxt.config.js{{#ifBabel}} --exec babel-node{{/ifBabel}} app.js",
+    "build": "nuxt build{{#ifBabel}} && babel app.js --out-file app.prod.js{{/ifBabel}}",
+    "start": "NODE_ENV=production node app.{{#ifBabel}}prod.{{/ifBabel}}js",
     "precommit": "npm run lint",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore ."
   },
+  {{#ifBabel}}
+  "babel": {
+    "plugins": "transform-async-to-generator"
+  },
+  {{/ifBabel}}
   "dependencies": {
-    "koa": "latest",
+    "koa": "{{ koaSemver koaVersion }}",
     "nuxt": "latest"
   },
   "devDependencies": {
+    {{#ifBabel}}
+    "babel-cli": "^6.23.0",
+    {{/ifBabel}}
     "babel-eslint": "^7.1.1",
     "eslint": "^3.13.1",
     "eslint-config-standard": "^6.2.1",
