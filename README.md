@@ -39,3 +39,7 @@ using a prerelease version of Node (i.e. v7.6.0-rc.1) you will need to either:
 - [KoaJS license](https://github.com/koajs/koa/blob/master/LICENSE)
 - [NuxtJS license](https://github.com/nuxt/nuxt.js/blob/master/LICENSE.md)
 - [VueJS license](https://github.com/vuejs/vue/blob/master/LICENSE)
+
+## Credits
+
+- [@detrohutt](https://github.com/detrohutt) for making the option of choosing between Koa 1.x and 2.x (PR [#2](https://github.com/nuxt/koa/pull/2))
