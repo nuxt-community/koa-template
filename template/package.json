@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "nodemon -w app.js -w nuxt.config.js{{#ifBabel}} --exec babel-node{{/ifBabel}} app.js",
     "build": "nuxt build{{#ifBabel}} && babel app.js --out-file app.prod.js{{/ifBabel}}",
-    "start": "NODE_ENV=production node app.{{#ifBabel}}prod.{{/ifBabel}}js",
+    "start": "cross-env NODE_ENV=production node app.{{#ifBabel}}prod.{{/ifBabel}}js",
     "precommit": "npm run lint",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore ."
   },
@@ -17,6 +17,7 @@
   },
   {{/ifBabel}}
   "dependencies": {
+    "cross-env": "^3.1.4",
     "koa": "{{ koaSemver }}",
     "nuxt": "latest"
   },
