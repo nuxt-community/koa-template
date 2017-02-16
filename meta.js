@@ -3,12 +3,16 @@ module.exports = {
     raw: function(options) {
       return options.fn(this)
     },
-    koaSemver: function(answer) {
-      return answer === '1.x' ? '^1.2.5' : '^2.0.0'
+    koaSemver: function() {
+      return this.koaVersion === '1.x' ? '^1.2.5' : '^2.0.0'
     },
     ifBabel: function(options) {
-      var needBabel = this.koaVersion === '2.x' && !this.nodeHasAsync
-      return needBabel ? options.fn(this) : ''
+      if (this.koaVersion !== '2.x') return ''
+      var nodeMajMin = process.version.match(/v(\d*).(\d*)./)
+      var semMaj = Number(nodeMajMin[1])
+      var semMin = Number(nodeMajMin[2])
+      var nodeHasAsync = (semMaj === 7 && semMin >= 6) || semMaj >= 8
+      return nodeHasAsync ? '' : options.fn(this)
     }
   },
   prompts: {
@@ -33,12 +37,6 @@ module.exports = {
       'message': 'Koa version',
       'choices': ['1.x', '2.x'],
       'default': 0
-    },
-    nodeHasAsync: {
-      'when': 'koaVersion == "2.x"',
-      'type': 'confirm',
-      'message': 'Are you using node >= v7.6.0?',
-      'default': false
     }
   },
   completeMessage: '{{#inPlace}}To get started:\n\n  npm install # Or yarn\n  npm run dev{{else}}To get started:\n\n  cd {{destDirName}}\n  npm install # Or yarn\n  npm run dev{{/inPlace}}'

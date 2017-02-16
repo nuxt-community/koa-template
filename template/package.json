@@ -17,7 +17,7 @@
   },
   {{/ifBabel}}
   "dependencies": {
-    "koa": "{{ koaSemver koaVersion }}",
+    "koa": "{{ koaSemver }}",
     "nuxt": "latest"
   },
   "devDependencies": {
