@@ -24,6 +24,7 @@
   "devDependencies": {
     {{#ifBabel}}
     "babel-cli": "^6.23.0",
+    "scmp": "^2.0.0",
     {{/ifBabel}}
     "babel-eslint": "^7.1.1",
     "eslint": "^3.13.1",
