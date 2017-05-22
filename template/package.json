@@ -5,27 +5,21 @@
   "author": "{{ author }}",
   "private": true,
   "scripts": {
-    "dev": "nodemon -w app.js -w nuxt.config.js{{#ifBabel}} --exec babel-node{{/ifBabel}} app.js",
-    "build": "nuxt build{{#ifBabel}} && babel app.js --out-file app.prod.js{{/ifBabel}}",
-    "start": "cross-env NODE_ENV=production node app.{{#ifBabel}}prod.{{/ifBabel}}js",
+    "dev": "backpack dev",
+    "build": "nuxt build && backpack build",
+    "start": "cross-env NODE_ENV=production node app.prod.js",
     "precommit": "npm run lint",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore ."
   },
-  {{#ifBabel}}
-  "babel": {
-    "plugins": "transform-async-to-generator"
-  },
-  {{/ifBabel}}
   "dependencies": {
     "cross-env": "^3.1.4",
     "koa": "{{ koaSemver }}",
-    "nuxt": "latest"
+    "nuxt": "~1.0.0-alpha1",
+    "source-map-support": "^0.4.15"
   },
   "devDependencies": {
-    {{#ifBabel}}
-    "babel-cli": "^6.23.0",
-    {{/ifBabel}}
     "babel-eslint": "^7.1.1",
+    "backpack-core": "^0.3.0",
     "eslint": "^3.13.1",
     "eslint-config-standard": "^6.2.1",
     "eslint-plugin-html": "^1.7.0",
