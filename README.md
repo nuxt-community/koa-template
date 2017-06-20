@@ -7,7 +7,7 @@
 This is a project template for [vue-cli](https://github.com/vuejs/vue-cli).
 
 ```bash
-vue init nuxt/koa <project-name>
+vue init nuxt-community/koa-template <project-name>
 cd <project-name> # move to your project
 npm install # or yarn install*[see note below]
 ```
