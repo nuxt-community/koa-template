@@ -23,7 +23,7 @@ async function start () {
   }
 
   app.use(async (ctx, next) => {
-  ctx.status = 200 // koa defaults to 404 when it sees that status is unset
+    ctx.status = 200 // koa defaults to 404 when it sees that status is unset
     await nuxt.render(ctx.req, ctx.res)
   })
 
