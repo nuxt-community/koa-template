@@ -21,7 +21,7 @@ if (config.dev) {
   })
 }
 
-app.use(async ctx => {
+app.use(ctx => {
   ctx.status = 200 // koa defaults to 404 when it sees that status is unset
 
   return new Promise((resolve, reject) => {
