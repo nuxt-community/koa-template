@@ -13,8 +13,8 @@
   },
   "dependencies": {
     "cross-env": "^5.0.1",
-    "koa": "^2.3.0",
-    "nuxt": "^1.0.0-rc3",
+    "koa": "^2.4.1",
+    "nuxt": "^1.0.0-rc11",
     "source-map-support": "^0.4.15"
   },
   "devDependencies": {
