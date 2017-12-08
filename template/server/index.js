@@ -16,7 +16,7 @@ async function start () {
   // Build in development
   if (config.dev) {
     const builder = new Builder(nuxt)
-    await new Builder(nuxt).build()
+    await builder.build()
   }
 
   app.use(async (ctx, next) => {
