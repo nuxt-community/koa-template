@@ -16,12 +16,12 @@
 {{{{/raw}}}}
 <script>
 export default {
-  asyncData ({ req }) {
+  asyncData({ req }) {
     return {
       name: req ? 'server' : 'client'
     }
   },
-  head () {
+  head() {
     return {
       title: `About Page (${this.name}-side)`
     }
