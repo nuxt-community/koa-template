@@ -1,6 +1,6 @@
 {
   "name": "{{ name }}",
-  "version": "1.1.1",
+  "version": "1.1.0",
   "description": "{{ description }}",
   "author": "{{ author }}",
   "private": true,
@@ -14,7 +14,7 @@
   "dependencies": {
     "cross-env": "^5.0.1",
     "koa": "^2.4.1",
-    "nuxt": "^1.1.1",
+    "nuxt": "latest",
     "source-map-support": "^0.4.15"
   },
   "devDependencies": {
