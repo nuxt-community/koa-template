@@ -1,5 +1,5 @@
 import Koa from 'koa'
-import { Nuxt, Builder } from 'nuxt'
+import { loadNuxt, build } from 'nuxt'
 
 async function start () {
   const app = new Koa()
@@ -11,12 +11,11 @@ async function start () {
   config.dev = !(app.env === 'production')
 
   // Instantiate nuxt.js
-  const nuxt = new Nuxt(config)
+  const nuxt = await loadNuxt(config.dev ? 'dev' : 'start')
 
   // Build in development
   if (config.dev) {
-    const builder = new Builder(nuxt)
-    await builder.build()
+    build(nuxt)
   }
 
   app.use(ctx => {
