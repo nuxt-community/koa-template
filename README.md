@@ -1,24 +1,20 @@
+<p align="center"><img width="328px" src="https://nuxtjs.org/logos/nuxt.svg"></p>
+
 # Nuxt.js with Koa
 
 > [KoaJS](http://koajs.com/) + [Nuxt.js](https://nuxtjs.org) = :zap:
 
+Live Demo: [https://codesandbox.io/s/github/nuxt-community/koa-template](https://codesandbox.io/s/github/nuxt-community/koa-template)
+
 ## Installation
 
-This is a project template for [vue-cli](https://github.com/vuejs/vue-cli).
+This is a template project, click on the green button "Use this template" at the top of this page and get started with GitHub :sparkles:
+
+One you cloned your repository, install the dependencies with:
 
 ```bash
-vue init nuxt-community/koa-template <project-name>
-cd <project-name> # move to your project
-npm install # or yarn install*[see note below]
+yarn install # or npm install
 ```
-
-> Make sure to use a version of vue-cli >= 2.1 (vue -V).
-
-*Note: Due to a bug in yarn's engine version detection code if you are
-using a prerelease version of Node (i.e. v7.6.0-rc.1) you will need to either:
-
-  1. Use `npm install`
-  2. Run `yarn` with a standard release of Node and then switch back
 
 ## Commands
 
@@ -28,6 +24,13 @@ using a prerelease version of Node (i.e. v7.6.0-rc.1) you will need to either:
 | npm run build | Build the nuxt.js web application for production. |
 | npm start | Start KoaJS server in production. |
 
+
+
+## Directory Structure
+
+The template uses the `server/` directory with two directories inside:
+- `api`: map each file to a route
+- `middleware`: used for server middleware (for each incoming request on SSR)
 
 ## Documentation
 
