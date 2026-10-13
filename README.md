@@ -1,3 +1,6 @@
+> [!NOTE]
+> This repository is archived. This template was built for Nuxt 2, which reached end of life on June 30, 2024.
+
 # Nuxt.js with Koa
 
 > [KoaJS](http://koajs.com/) + [Nuxt.js](https://nuxtjs.org) = :zap:
